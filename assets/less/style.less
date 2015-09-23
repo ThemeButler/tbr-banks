@@ -1,0 +1,191 @@
+/* Font.
+ ========================================================================== */
+
+@import url(http://fonts.googleapis.com/css?family=Cabin:700);
+
+
+/* Header.
+ ========================================================================== */
+
+.tm-header {
+	background: @global-primary-background;
+	color: #fff;
+}
+
+.tm-site-title-tag {
+	color: rgba(255,255,255,0.5);
+}
+
+.tm-site-branding a {
+	color: #fff;
+	font-family: Cabin;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 30px;
+
+	&:active {
+		position: relative;
+		margin-top: -1px;
+	}
+
+}
+
+.tm-site-branding a:active {
+	position: relative;
+	bottom: -1px;
+}
+
+
+/* Search. */
+.tm-primary-menu .tm-search {
+	width: 370px;
+}
+
+.tm-primary-menu .tm-search-toggle {
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+
+/* Main.
+ ========================================================================== */
+
+.tm-main {
+	background-color: #F5F5F5;
+}
+
+
+/* Content.
+ ========================================================================== */
+
+.tm-centered-content {
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+/* Posts grid.
+ ========================================================================== */
+
+.tm-posts-grid {
+
+	.tm-article-image {
+		margin: -@panel-box-padding -@panel-box-padding 15px -@panel-box-padding;
+
+		img {
+			border-radius: @utility-border-rounded @utility-border-rounded 0 0;
+		}
+
+	}
+
+}
+
+
+/* Comment form
+ ========================================================================== */
+
+.comment-respond {
+	margin-top: 0;
+}
+
+.form-submit {
+	margin-bottom: 0;
+}
+
+.tm-comment-form-wrap {
+	background: #454545;
+	border-radius: @utility-border-rounded;
+	padding: 35px;
+}
+
+/* Phone landscape and bigger */
+@media (max-width: @breakpoint-small) {
+
+    .tm-comment-form-wrap {
+		padding: 15px 20px 20px 20px;
+	}
+
+}
+
+
+/* Widgets
+ ========================================================================== */
+
+.tm-widget .tm-count {
+	color: #999;
+	font-size: 12px;
+}
+
+.tm-bottom .tm-widget h3 {
+	text-transform: uppercase;
+	color: #444;
+	font-size: 13px;
+}
+
+
+/* Remove Beans default styling
+ ========================================================================== */
+
+.tm-header,
+.tm-footer {
+	border: 0;
+}
+
+/* 404.
+ ========================================================================== */
+.error404 .uk-article {
+	text-align: center;
+	padding-bottom: 80px;
+}
+
+.error404 .uk-article-title {
+	font-weight: 700;
+	font-size: 270px;
+	line-height: 100%;
+	color: @global-link-color;
+}
+
+.error404 .tm-article-content h2 {
+	font-weight: 700;
+	font-size: 70px;
+	line-height: 100%;
+}
+
+.error404 .tm-article-content .uk-form {
+	max-width: 480px;
+}
+
+/* Phone landscape and bigger */
+@media (max-width: @breakpoint-medium) {
+
+	.error404 .uk-article {
+		padding-bottom: 60px;
+	}
+
+	.error404 .uk-article-title {
+		font-size: 190px;
+	}
+
+	.error404 .tm-article-content h2 {
+		font-size: 50px;
+	}
+
+}
+
+/* Phone landscape and bigger */
+@media (max-width: @breakpoint-small) {
+
+	.error404 .uk-article {
+		padding-bottom: 30px;
+	}
+
+	.error404 .uk-article-title {
+		font-size: 130px;
+	}
+
+	.error404 .tm-article-content h2 {
+		font-size: 40px;
+	}
+
+}

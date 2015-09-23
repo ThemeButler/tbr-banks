@@ -1,2 +1,2 @@
 # tbr-banks
-Banks child-theme for Beans.
+Banks is a child-theme for Beans.

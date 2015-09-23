@@ -1,0 +1,68 @@
+/* Article modifiers
+ ========================================================================== */
+
+.uk-article {
+	background: #fff;
+	border-radius: @utility-border-rounded;
+	padding: 25px 35px 35px 35px;
+
+	.tm-article-image {
+		margin-right: -35px;
+		margin-left: -35px;
+	}
+
+	.tm-oembed iframe,
+	.tm-oembed blockquote  {
+		width: 2000px !important;
+		max-width: 100% !important;
+		box-shadow: none !important;
+		margin: 0 !important;
+		border-radius: 0 !important;
+	}
+
+	.uk-form select,
+	.uk-form textarea,
+	.uk-form input:not([type]),
+	.uk-form input[type="text"],
+	.uk-form input[type="password"],
+	.uk-form input[type="datetime"],
+	.uk-form input[type="datetime-local"],
+	.uk-form input[type="date"],
+	.uk-form input[type="month"],
+	.uk-form input[type="time"],
+	.uk-form input[type="week"],
+	.uk-form input[type="number"],
+	.uk-form input[type="email"],
+	.uk-form input[type="url"],
+	.uk-form input[type="search"],
+	.uk-form input[type="tel"],
+	.uk-form input[type="color"] {
+    	box-shadow: inset 1px 1px 2px rgba( 0,0,0,0.1 );
+    	background: #F5F4F4;
+
+    	&:focus {
+    		box-shadow: inset 1px 1px 2px rgba( 0,0,0,0.1 );
+    		background: #F9F9F9;
+    	}
+
+    }
+
+}
+
+/* Article modifiers
+ ========================================================================== */
+
+/* Phone landscape and bigger */
+@media (max-width: @breakpoint-small) {
+
+    .uk-article {
+		padding: 15px 20px 20px 20px;
+
+		.tm-article-image {
+			margin-right: -20px;
+			margin-left: -20px;
+		}
+
+	}
+
+}

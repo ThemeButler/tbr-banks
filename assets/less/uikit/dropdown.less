@@ -1,0 +1,32 @@
+// Variables
+// ========================================================================
+
+@dropdown-navbar-background:                    #fff;
+
+
+/* Dropdown modifiers
+ ========================================================================== */
+
+.hook-dropdown-navbar {
+	border: 1px solid @global-primary-background;
+	background-color: #f5f5f5;
+
+	.uk-nav {
+		margin-top: -@dropdown-padding;
+		margin-bottom: -@dropdown-padding;
+	}
+
+	.uk-nav a {
+		color: @base-link-color;
+		padding-top: 9px;
+		padding-bottom: 9px;
+
+		&:hover,
+		&:active {
+			color: @base-link-color;
+			background-color: #fff;
+		}
+
+	}
+
+}
