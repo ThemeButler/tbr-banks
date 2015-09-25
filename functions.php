@@ -1,38 +1,45 @@
 <?php
 
-// Enqueue uikit assets.
+// Include Beans
+require_once( get_template_directory() . '/lib/init.php' );
+
+// Remove Beans default styling
+remove_theme_support( 'beans-default-styling' );
+
+
+// Enqueue uikit assets
 beans_add_smart_action( 'beans_uikit_enqueue_scripts', 'banks_enqueue_uikit_assets', 5 );
 
 function banks_enqueue_uikit_assets() {
 
-	// Enqueue uikit overwrite theme folder.
-	beans_uikit_enqueue_theme( 'banks', BEANS_THEME_PATH . 'assets/less/uikit' );
+	// Enqueue uikit overwrite theme folder
+	beans_uikit_enqueue_theme( 'banks', get_stylesheet_directory_uri() . '/assets/less/uikit' );
 
-	// Add the theme style as a uikit fragment to have access to all the variables.
-	beans_compiler_add_fragment( 'uikit', BEANS_THEME_PATH . 'assets/less/style.less', 'less' );
+	// Add the theme style as a uikit fragment to have access to all the variables
+	beans_compiler_add_fragment( 'uikit', get_stylesheet_directory_uri() . '/assets/less/style.less', 'less' );
 
-	// Add the theme js as a uikit fragment.
-	beans_compiler_add_fragment( 'uikit', BEANS_THEME_PATH . 'assets/js/banks.js', 'js' );
+	// Add the theme js as a uikit fragment
+	beans_compiler_add_fragment( 'uikit', get_stylesheet_directory_uri() . '/assets/js/banks.js', 'js' );
 
-	// Include the uikit components needed.
+	// Include the uikit components needed
 	beans_uikit_enqueue_components( array( 'contrast' ) );
 
 }
 
 
-// Add admin layout option.
+// Add admin layout option
 add_filter( 'beans_layouts', 'banks_layouts' );
 
 function banks_layouts( $layouts ) {
 
-	$layouts['banks_c'] = BEANS_THEME_URL . 'assets/images/c.png';
+	$layouts['banks_c'] = get_stylesheet_directory_uri() . 'assets/images/c.png';
 
 	return $layouts;
 
 }
 
 
-// Set the default layout.
+// Set the default layout
 add_filter( 'beans_default_layout', 'banks_default_layout' );
 
 function banks_default_layout() {
@@ -42,7 +49,7 @@ function banks_default_layout() {
 }
 
 
-// Remove page post type comment support.
+// Remove page post type comment support
 beans_add_smart_action( 'init', 'banks_post_type_support' );
 
 function banks_post_type_support() {
@@ -52,7 +59,7 @@ function banks_post_type_support() {
 }
 
 
-// Setup document fragements, markups and attributes.
+// Setup document fragements, markups and attributes
 add_action( 'beans_before_load_document', 'banks_setup_document' );
 
 function banks_setup_document() {
@@ -61,16 +68,16 @@ function banks_setup_document() {
   if ( is_home() )
     beans_remove_attribute( 'beans_post', 'class', 'uk-panel-box' );
 
-  // Site Logo.
+  // Site Logo
   beans_remove_attribute( 'beans_site_title_tag', 'class', 'uk-text-muted' );
 
-  // Breadcrumb.
+  // Breadcrumb
   beans_remove_action( 'beans_breadcrumb' );
 
-	// Post meta.
+	// Post meta
 	beans_add_attribute( 'beans_post_meta_date', 'class', 'uk-text-muted' );
 
-	// Search form.
+	// Search form
 	beans_replace_attribute( 'beans_search_form', 'class', 'uk-form-icon uk-form-icon-flip', 'uk-display-inline-block' );
 	beans_remove_markup( 'beans_search_form_input_icon' );
 
@@ -81,13 +88,13 @@ function banks_setup_document() {
   // Only applies to singular and not pages
   if ( is_singular() && !is_page() ) {
 
-    // Post title.
+    // Post title
     beans_add_attribute( 'beans_post_title', 'class', 'uk-margin-small-bottom' );
 
-    // Post navigation.
+    // Post navigation
     beans_add_attribute( 'beans_post_navigation', 'class', 'uk-grid-margin uk-margin-bottom-remove' );
 
-    // Post comments.
+    // Post comments
     beans_add_attribute( 'beans_comments', 'class', 'uk-margin-bottom-remove' );
     beans_add_attribute( 'beans_comment_form_wrap', 'class', 'uk-contrast' );
     beans_add_attribute( 'beans_comment_form_submit', 'class', 'uk-button-large' );
@@ -98,7 +105,7 @@ function banks_setup_document() {
 }
 
 
-// Add primaray menu search field.
+// Add primaray menu search field
 beans_add_smart_action( 'beans_primary_menu_append_markup', 'banks_primary_menu_search' );
 
 function banks_primary_menu_search() {
@@ -124,7 +131,7 @@ function banks_primary_menu_search() {
 }
 
 
-// Remove comment after note (filter).
+// Remove comment after note (filter)
 add_action( 'comment_form_defaults', 'banks_comment_form_defaults' );
 
 function banks_comment_form_defaults( $args ) {
@@ -136,7 +143,7 @@ function banks_comment_form_defaults( $args ) {
 }
 
 
-// Register bottom widget area.
+// Register bottom widget area
 beans_add_smart_action( 'widgets_init', 'banks_register_bottom_widget_area' );
 
 function banks_register_bottom_widget_area() {
@@ -151,7 +158,7 @@ function banks_register_bottom_widget_area() {
 }
 
 
-// Add the bottom widget area.
+// Add the bottom widget area
 beans_add_smart_action( 'beans_footer_before_markup', 'banks_bottom_widget_area' );
 
 function banks_bottom_widget_area() {
