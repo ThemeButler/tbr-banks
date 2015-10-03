@@ -32,7 +32,7 @@ add_filter( 'beans_layouts', 'banks_layouts' );
 
 function banks_layouts( $layouts ) {
 
-	$layouts['banks_c'] = get_stylesheet_directory_uri() . 'assets/images/c.png';
+	$layouts['banks_c'] = get_stylesheet_directory_uri() . '/assets/images/c.png';
 
 	return $layouts;
 
