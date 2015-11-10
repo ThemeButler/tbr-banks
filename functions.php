@@ -3,6 +3,7 @@
 // Include Beans
 require_once( get_template_directory() . '/lib/init.php' );
 
+
 // Remove Beans default styling
 remove_theme_support( 'beans-default-styling' );
 
@@ -174,6 +175,7 @@ function banks_bottom_widget_area() {
 	echo beans_close_markup( 'banks_bottom', 'section' );
 
 }
+
 
 // Add footer content
 add_filter( 'beans_footer_credit_right_text_output', 'banks_footer' );

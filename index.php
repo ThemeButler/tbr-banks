@@ -9,6 +9,7 @@ function banks_index_default_layout() {
 
 }
 
+
 // Setup Banks
 beans_add_smart_action( 'beans_before_load_document', 'banks_index_setup_document' );
 
@@ -44,6 +45,7 @@ function banks_index_setup_document() {
 
 }
 
+
 // Resize post image (filter)
 beans_add_smart_action( 'beans_edit_post_image_args', 'banks_index_post_image_args' );
 
@@ -54,6 +56,7 @@ function banks_index_post_image_args( $args ) {
     return $args;
 
 }
+
 
 // Load beans document
 beans_load_document();
