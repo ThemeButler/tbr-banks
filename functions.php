@@ -178,7 +178,7 @@ function banks_bottom_widget_area() {
 
 
 // Add footer content
-add_filter( 'beans_footer_credit_right_text_output', 'banks_footer' );
+beans_add_smart_action( 'beans_footer_credit_right_text_output', 'banks_footer' );
 
 function banks_footer() { ?>
 
