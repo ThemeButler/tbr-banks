@@ -182,6 +182,6 @@ beans_add_smart_action( 'beans_footer_credit_right_text_output', 'banks_footer' 
 
 function banks_footer() { ?>
 
-  <a href="http://www.themebutler.com/themes/banks/" target="_blank" title="Banks theme for WordPress">Banks</a> theme for <a href="http://wordpress.org" target="_blank">WordPress</a>.
+  <a href="http://www.themebutler.com/themes/banks/" target="_blank" title="Banks theme for WordPress">Banks</a> theme for <a href="http://wordpress.org" target="_blank">WordPress</a>. Built-with <a href="http://www.getbeans.io/" title="Beans Framework for WordPress" target="_blank">Beans</a>.
 
 <? }
