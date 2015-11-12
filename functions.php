@@ -64,18 +64,19 @@ function banks_post_type_support() {
 
 // Setup document fragements, markups and attributes
 add_action( 'beans_before_load_document', 'banks_setup_document' );
+add_action( 'wp', 'banks_setup_document' );
 
 function banks_setup_document() {
 
-  // Frontpage posts
-  if ( is_home() )
-    beans_remove_attribute( 'beans_post', 'class', 'uk-panel-box' );
+	// Frontpage posts
+	if ( is_home() )
+		beans_remove_attribute( 'beans_post', 'class', 'uk-panel-box' );
 
-  // Site Logo
-  beans_remove_attribute( 'beans_site_title_tag', 'class', 'uk-text-muted' );
+	// Site Logo
+	beans_remove_attribute( 'beans_site_title_tag', 'class', 'uk-text-muted' );
 
-  // Breadcrumb
-  beans_remove_action( 'beans_breadcrumb' );
+	// Breadcrumb
+	beans_remove_action( 'beans_breadcrumb' );
 
 	// Post meta
 	beans_add_attribute( 'beans_post_meta_date', 'class', 'uk-text-muted' );
@@ -84,26 +85,26 @@ function banks_setup_document() {
 	beans_replace_attribute( 'beans_search_form', 'class', 'uk-form-icon uk-form-icon-flip', 'uk-display-inline-block' );
 	beans_remove_markup( 'beans_search_form_input_icon' );
 
-  // Add grid min width for Banks slim content
-  if ( beans_get_layout() == 'banks_c' )
-  	beans_add_attribute( 'beans_content', 'class', 'tm-centered-content' );
+	// Add grid min width for Banks slim content
+	if ( beans_get_layout() == 'banks_c' )
+		beans_add_attribute( 'beans_content', 'class', 'tm-centered-content' );
 
-  // Only applies to singular and not pages
-  if ( is_singular() && !is_page() ) {
+	// Only applies to singular and not pages
+	if ( is_singular() && !is_page() ) {
 
-    // Post title
-    beans_add_attribute( 'beans_post_title', 'class', 'uk-margin-small-bottom' );
+		// Post title
+		beans_add_attribute( 'beans_post_title', 'class', 'uk-margin-small-bottom' );
 
-    // Post navigation
-    beans_add_attribute( 'beans_post_navigation', 'class', 'uk-grid-margin uk-margin-bottom-remove' );
+		// Post navigation
+		beans_add_attribute( 'beans_post_navigation', 'class', 'uk-grid-margin uk-margin-bottom-remove' );
 
-    // Post comments
-    beans_add_attribute( 'beans_comments', 'class', 'uk-margin-bottom-remove' );
-    beans_add_attribute( 'beans_comment_form_wrap', 'class', 'uk-contrast' );
-    beans_add_attribute( 'beans_comment_form_submit', 'class', 'uk-button-large' );
-	  beans_add_attribute( 'beans_no_comment', 'class', 'tm-no-comments uk-text-center uk-text-large uk-block' );
+		// Post comments
+		beans_add_attribute( 'beans_comments', 'class', 'uk-margin-bottom-remove' );
+		beans_add_attribute( 'beans_comment_form_wrap', 'class', 'uk-contrast' );
+		beans_add_attribute( 'beans_comment_form_submit', 'class', 'uk-button-large' );
+		beans_add_attribute( 'beans_no_comment', 'class', 'tm-no-comments uk-text-center uk-text-large uk-block' );
 
-  }
+	}
 
 }
 
