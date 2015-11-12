@@ -30,6 +30,7 @@ function banks_enqueue_uikit_assets() {
 
 // Add admin layout option
 add_filter( 'beans_layouts', 'banks_layouts' );
+beans_add_smart_action( 'beans_layouts', 'banks_layouts' );
 
 function banks_layouts( $layouts ) {
 
@@ -42,6 +43,7 @@ function banks_layouts( $layouts ) {
 
 // Set the default layout
 add_filter( 'beans_default_layout', 'banks_default_layout' );
+beans_add_smart_action( 'beans_default_layout', 'banks_default_layout' );
 
 function banks_default_layout() {
 
@@ -134,6 +136,7 @@ function banks_primary_menu_search() {
 
 // Remove comment after note (filter)
 add_action( 'comment_form_defaults', 'banks_comment_form_defaults' );
+beans_add_smart_action( 'comment_form_defaults', 'banks_comment_form_defaults' );
 
 function banks_comment_form_defaults( $args ) {
 
