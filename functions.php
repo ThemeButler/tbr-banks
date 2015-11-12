@@ -28,8 +28,6 @@ function banks_enqueue_uikit_assets() {
 }
 
 
-// Add admin layout option
-add_filter( 'beans_layouts', 'banks_layouts' );
 // Add admin layout option (filter)
 beans_add_smart_action( 'beans_layouts', 'banks_layouts' );
 
@@ -63,7 +61,6 @@ function banks_post_type_support() {
 
 
 // Setup document fragements, markups and attributes
-add_action( 'beans_before_load_document', 'banks_setup_document' );
 add_action( 'wp', 'banks_setup_document' );
 
 function banks_setup_document() {
@@ -136,7 +133,6 @@ function banks_primary_menu_search() {
 
 
 // Remove comment after note (filter)
-add_action( 'comment_form_defaults', 'banks_comment_form_defaults' );
 beans_add_smart_action( 'comment_form_defaults', 'banks_comment_form_defaults' );
 
 function banks_comment_form_defaults( $args ) {
@@ -181,7 +177,6 @@ function banks_bottom_widget_area() {
 }
 
 
-// Add footer content
 // Add footer content (filter)
 beans_add_smart_action( 'beans_footer_credit_right_text_output', 'banks_footer' );
 
