@@ -30,6 +30,7 @@ function banks_enqueue_uikit_assets() {
 
 // Add admin layout option
 add_filter( 'beans_layouts', 'banks_layouts' );
+// Add admin layout option (filter)
 beans_add_smart_action( 'beans_layouts', 'banks_layouts' );
 
 function banks_layouts( $layouts ) {
@@ -41,8 +42,7 @@ function banks_layouts( $layouts ) {
 }
 
 
-// Set the default layout
-add_filter( 'beans_default_layout', 'banks_default_layout' );
+// Set the default layout (filter)
 beans_add_smart_action( 'beans_default_layout', 'banks_default_layout' );
 
 function banks_default_layout() {
@@ -181,6 +181,7 @@ function banks_bottom_widget_area() {
 
 
 // Add footer content
+// Add footer content (filter)
 beans_add_smart_action( 'beans_footer_credit_right_text_output', 'banks_footer' );
 
 function banks_footer() { ?>
