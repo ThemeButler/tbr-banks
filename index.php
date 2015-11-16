@@ -43,6 +43,9 @@ function banks_index_setup_document() {
 	// Posts pagination
 	beans_modify_action_hook( 'beans_posts_pagination', 'beans_content_after_markup' );
 
+	// Footer
+	beans_remove_attribute( 'beans_footer', 'class', 'uk-block' );
+
 }
 
 
