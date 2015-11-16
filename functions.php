@@ -28,6 +28,21 @@ function banks_enqueue_uikit_assets() {
 }
 
 
+// Register bottom widget area
+beans_add_smart_action( 'widgets_init', 'banks_register_bottom_widget_area' );
+
+function banks_register_bottom_widget_area() {
+
+	beans_register_widget_area( array(
+		'name' => 'Bottom',
+		'id' => 'bottom',
+		'description' => 'Widgets in this area will be shown in the bottom section as a grid.',
+		'beans_type' => 'grid'
+	) );
+
+}
+
+
 // Add admin layout option (filter)
 beans_add_smart_action( 'beans_layouts', 'banks_layouts' );
 
@@ -113,10 +128,10 @@ beans_add_smart_action( 'beans_primary_menu_append_markup', 'banks_primary_menu_
 
 function banks_primary_menu_search() {
 
-  	echo beans_open_markup( 'banks_menu_primary_search', 'div', array(
-  		'class' => 'tm-search uk-visible-large uk-navbar-content',
-  		'style' => 'display: none;'
-  	) );
+	echo beans_open_markup( 'banks_menu_primary_search', 'div', array(
+		'class' => 'tm-search uk-visible-large uk-navbar-content',
+		'style' => 'display: none;'
+	) );
 
 		get_search_form();
 
@@ -139,24 +154,9 @@ beans_add_smart_action( 'comment_form_defaults', 'banks_comment_form_defaults' )
 
 function banks_comment_form_defaults( $args ) {
 
-    $args['comment_notes_after'] = '';
+	$args['comment_notes_after'] = '';
 
-    return $args;
-
-}
-
-
-// Register bottom widget area
-beans_add_smart_action( 'widgets_init', 'banks_register_bottom_widget_area' );
-
-function banks_register_bottom_widget_area() {
-
-    beans_register_widget_area( array(
-        'name' => 'Bottom',
-        'id' => 'bottom',
-        'description' => 'Widgets in this area will be shown in the bottom section as a grid.',
-        'beans_type' => 'grid'
-    ) );
+	return $args;
 
 }
 
