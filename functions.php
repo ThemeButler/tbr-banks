@@ -103,6 +103,8 @@ function banks_setup_document() {
 		beans_add_attribute( 'beans_no_comment', 'class', 'tm-no-comments uk-text-center uk-text-large uk-block' );
 
 	}
+	if ( get_bloginfo( 'description' ) )
+		beans_add_attribute( 'beans_primary_menu', 'class', 'uk-margin-small-top' );
 
 }
 
