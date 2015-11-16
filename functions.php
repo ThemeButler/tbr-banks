@@ -167,6 +167,10 @@ beans_add_smart_action( 'beans_footer_before_markup', 'banks_bottom_widget_area'
 
 function banks_bottom_widget_area() {
 
+	// Stop here if no widget
+	if( !beans_is_active_widget_area( 'bottom' ) )
+		return;
+
 	echo beans_open_markup( 'banks_bottom', 'section', array( 'class' => 'tm-bottom uk-block uk-padding-bottom-remove' ) );
 
 		echo beans_open_markup( 'beans_fixed_wrap[_bottom]', 'div', 'class=uk-container uk-container-center' );
