@@ -45,8 +45,7 @@ beans_add_smart_action( 'beans_default_layout', 'banks_default_layout' );
 
 function banks_default_layout() {
 
-	if ( is_singular() )
-		return 'banks_c';
+	return 'banks_c';
 
 }
 
