@@ -25,6 +25,7 @@ function banks_index_setup_document() {
 
 	// Post article
 	beans_remove_attribute( 'beans_post', 'class', 'uk-article' );
+	beans_remove_attribute( 'beans_post_title', 'class', 'uk-article-title' );
 
 	// Post meta
 	beans_remove_action( 'beans_post_meta' );
