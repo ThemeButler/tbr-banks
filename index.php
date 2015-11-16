@@ -23,9 +23,11 @@ function banks_index_setup_document() {
 	  'class' => 'uk-panel uk-panel-box'
 	) );
 
+	// Post content
+	beans_remove_attribute( 'beans_content', 'class', 'tm-centered-content' );
+
 	// Post article
 	beans_remove_attribute( 'beans_post', 'class', 'uk-article' );
-	beans_remove_attribute( 'beans_post_title', 'class', 'uk-article-title' );
 
 	// Post meta
 	beans_remove_action( 'beans_post_meta' );
@@ -44,9 +46,6 @@ function banks_index_setup_document() {
 	// Posts pagination
 	beans_modify_action_hook( 'beans_posts_pagination', 'beans_content_after_markup' );
 
-	// Footer
-	beans_remove_attribute( 'beans_footer', 'class', 'uk-block' );
-
 }
 
 
@@ -55,9 +54,9 @@ beans_add_smart_action( 'beans_edit_post_image_args', 'banks_index_post_image_ar
 
 function banks_index_post_image_args( $args ) {
 
-    $args['resize'] = array( 430, 250, true );
+	$args['resize'] = array( 430, 250, true );
 
-    return $args;
+	return $args;
 
 }
 
